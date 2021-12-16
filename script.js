@@ -1,40 +1,68 @@
+
 function clock(){
     
-    var  hours=document.getElementById("hours");
-    var  mins=document.getElementById("mins");
-    var  second=document.getElementById("second");
-    var  am=document.getElementById("am");
+    var  hrs=document.getElementById("hours");
+    var  min=document.getElementById("mins");
+    var  sec=document.getElementById("second");
+    var  ampm=document.getElementById("am");
 
     var time=new Date();
-    var a=time.getHours();
-    var b=time.getMinutes();
-    var c=time.getSeconds();
-     
+    var hrs=time.getHours();
+    var min=time.getMinutes();
+    var sec=time.getSeconds();
+    var ampm=hrs >=12? "PM":"AM";
+    // console.log(am_pm);
+    ampm.innerHTML = ampm;
+    hrs = hrs%12;
+    hrs = hrs ? hrs:12;
+    hrs.innerHTML = hrs;
+    if(hrs>=12){
+        ampm.innerHTML = 'PM';
+
+    }
+    if(hrs>=12){
+        hrs = hrs-12;
+    }
+    if(hrs == 0){
+        hrs =12;
+    }
+    if(hrs<10){
+        hrs = '0' + hrs;
+    }
+    if(min<10){
+        min = '0' + min;
+    }
+    if(sec<10){
+        sec = '0' + sec;
+    }
     
-    hours.innerHTML=a;
-    mins.innerHTML=b;
-    second.innerHTML=c;
+    
+    hours.innerHTML=hrs;
+    mins.innerHTML=min;
+    second.innerHTML=sec;
+    ampm.innerHTML=am;
 }
 setInterval(clock,1000);
   
 
-function Makediv(){
+function Makediv(){    
     var container=document.getElementById('dynamic-blockk');
     container.style.display='block';
-    
-    var invalue=document.getElementById("wakeuptime");
-    var value=invalue.options[invalue.selectedIndex].text;
-    document.getElementById("dynamic-blockk").innerHTML="Wakeup time"+":"+" "+value;
-    
-    var invalue=document.getElementById("lunchtime");
-    var value=invalue.options[invalue.selectedIndex].text;
-    document.getElementById("dynamic-blockk").innerHTML="lunch time"+":"+" "+value;
-    
 
-    var invalue=document.getElementById("naptime");
-    var value=invalue.options[invalue.selectedIndex].text;
-    document.getElementById("dynamic-blockk").innerHTML="Nap time"+":"+" "+value;
-}
+    var invalue1=document.getElementById("wakeuptime");
+    var value1=invalue1.options[invalue1.selectedIndex].text;
+    document.getElementById("dynamic-blockk").innerHTML="Wakeup time"+":"+" "+value1;
+        
+    var invalue2=document.getElementById("lunchtime");
+    var value2=invalue2.options[invalue2.selectedIndex].text;
+    document.getElementById("dynamic-blockk").innerHTML="lunch time"+":"+" "+value2;
+    
+    
+   
+    var invalue3=document.getElementById("naptime");
+    var value3=invalue3.options[invalue3.selectedIndex].text;
+    document.getElementById("dynamic-blockk").innerHTML="Wakeup time"+":"+" "+value1+"<br> Lunch time"+":"+" "+value2+"<br/> Nap time"+":"+" "+value3;
+ }
 
 
 function settime(){
@@ -63,6 +91,8 @@ function settime(){
         document.getElementById('text').innerHTML='Lets have nap.';
     }
     Makediv();
+    
+    
     
 }
 
