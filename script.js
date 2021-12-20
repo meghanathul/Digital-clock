@@ -11,7 +11,7 @@ function clock(){
     var min=time.getMinutes();
     var sec=time.getSeconds();
     var ampm=hrs >=12? "PM":"AM";
-    // console.log(am_pm);
+
     ampm.innerHTML = ampm;
     hrs = hrs%12;
     hrs = hrs ? hrs:12;
@@ -40,7 +40,7 @@ function clock(){
     hours.innerHTML=hrs;
     mins.innerHTML=min;
     second.innerHTML=sec;
-    ampm.innerHTML=am;
+    ampm.innerHTML=ampm;
 }
 setInterval(clock,1000);
   
@@ -55,13 +55,13 @@ function Makediv(){
         
     var invalue2=document.getElementById("lunchtime");
     var value2=invalue2.options[invalue2.selectedIndex].text;
-    document.getElementById("dynamic-blockk").innerHTML="lunch time"+":"+" "+value2;
+    document.getElementById("dynamic-blockk").innerHTML="Lunch time"+":"+" "+value2;
     
     
    
     var invalue3=document.getElementById("naptime");
     var value3=invalue3.options[invalue3.selectedIndex].text;
-    document.getElementById("dynamic-blockk").innerHTML="Wakeup time"+":"+" "+value1+"<br> Lunch time"+":"+" "+value2+"<br/> Nap time"+":"+" "+value3;
+    document.getElementById("dynamic-blockk").innerHTML="Wakeup Time"+":"+" "+value1+"<br> Lunch Time"+":"+" "+value2+"<br/>Nap Time"+":"+" "+value3;
  }
 
 
@@ -72,7 +72,7 @@ function settime(){
     if (i==hours){
         
         document.getElementById('image').style.backgroundImage="url(./wakeup.png)";
-        document.getElementById('text').innerHTML='Wake up!!';
+        document.getElementById('text').innerHTML='<h2>Wake up!!</h2>';
     }
     
     var i=document.getElementById('lunchtime').value;
@@ -80,7 +80,7 @@ function settime(){
     if (i==hours){
        
         document.getElementById('image').style.backgroundImage="url(./lunch1.jpeg)";
-        document.getElementById('text').innerHTML='Lets have lunch.';
+        document.getElementById('text').innerHTML='<h2>Lets have lunch!!</h2>';
     } 
 
     var i=document.getElementById('naptime').value;
@@ -88,7 +88,7 @@ function settime(){
     if (i==hours){
         
         document.getElementById('image').style.backgroundImage="url(./night.jpeg)";
-        document.getElementById('text').innerHTML='Lets have nap.';
+        document.getElementById('text').innerHTML='<h2>Lets have nap.!!</h2>';
     }
     Makediv();
     
