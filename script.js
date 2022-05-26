@@ -5,7 +5,7 @@ function clock(){
     var  min=document.getElementById("mins");
     var  sec=document.getElementById("second");
     var  ampm=document.getElementById("am");
-
+    
     var time=new Date();
     var hrs=time.getHours();
     var min=time.getMinutes();

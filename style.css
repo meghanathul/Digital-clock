@@ -201,8 +201,6 @@
     top: 150px; 
     margin-left:500px;
     position: absolute;
-    
-
 }
 #dynamic-blockk{
     width: 300px;
@@ -220,7 +218,7 @@
     width: 350px;
     height: 50px;
     border-radius: 2px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     
 }
 
@@ -253,3 +251,31 @@
     border-radius: 2px;
     
 } 
+@media only screen and (max-width: 600px) {
+   
+    .timebox{
+        left: 80px;
+        top: 150px;    
+    width: 450px;
+    height: 80px;
+       }
+       .middlecontainer{
+        width: 450px;
+        height: 309px;
+        margin-top: 30%;
+        margin-left:80px;
+        
+    }
+    #button{
+        margin-left: 25px; 
+        height: 50px;
+    }
+    .imagecontainer{
+        width: 450px;
+        height: 350px;
+        top: 730px; 
+        margin-left:0px;
+
+    }
+  }
+  
